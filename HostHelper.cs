@@ -9,6 +9,44 @@ namespace NoSuchCompany.QualityTools.Service.Automation.Hosting
 {
     #region Class
 
+    /// <summary>
+    /// Builds a <see cref="IHost"/> instance that can be used to inject parameters into a Function.
+    /// </summary>
+    /// <remarks>
+    /// To use it for integration tests, first build a Startup class or one derived from it that contains
+    /// mock instances of the services to inject.
+    ///
+    /// public class Startup
+    /// {
+    ///     public override void Configure(IFunctionsHostBuilder functionsHostBuilder)
+    ///     {
+    ///          ConfigureEmailService(functionsHostBuilder.Services);
+    ///     }      
+    ///
+    /// 
+    ///     protected virtual void ConfigureSomeService(IServiceCollection serviceCollection)
+    ///     {
+    ///        //  Inject a concrete service.
+    ///        serviceCollection.AddTransient<ISomeService, SomeService>();
+    ///     }
+    /// }
+    /// 
+    /// public sealed class TestStartup : Startup
+    /// {
+    ///     protected override void ConfigureSomeService(IServiceCollection serviceCollection)
+    ///     {
+    ///        //  Inject a mock service.
+    ///        serviceCollection.AddTransient<ISomeService, MockOfSomeService>();
+    ///     }
+    /// }
+    ///
+    /// Then, the helper can be called with like this:
+    ///
+    /// var startup = new TestStartup();
+    /// 
+    /// var myAzureFunctionToTest = HostHelper.Instantiate<AnAzureFunction>(startup);
+    /// 
+    /// </remarks>
     [ExcludeFromCodeCoverage]
     public static class HostHelper
     {
