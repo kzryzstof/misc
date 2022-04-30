@@ -1,482 +1,416 @@
 <?xml version="1.0" encoding="utf-16"?>
 <Patterns xmlns="urn:schemas-jetbrains-com:member-reordering-patterns">
-  <FilePattern>
+  <FilePattern RemoveRegions="AllExceptGenerated">
     <Entry DisplayName="Using statements">
       <Entry.Match>
         <Kind Is="Operator" />
       </Entry.Match>
     </Entry>
-    <Region Name="Delegates">
-      <Entry DisplayName="delegates">
-        <Entry.Match>
-          <Or>
-            <Kind Is="Delegate" />
-          </Or>
-        </Entry.Match>
-        <Entry.SortBy>
-          <Name />
-        </Entry.SortBy>
-      </Entry>
-    </Region>
-    <Region Name="Enum">
-      <Entry DisplayName="Enum">
-        <Entry.Match>
-          <Or>
-            <Kind Is="Enum" />
-          </Or>
-        </Entry.Match>
-        <Entry.SortBy>
-          <Name />
-        </Entry.SortBy>
-      </Entry>
-    </Region>
-    <Region Name="Interface">
-      <Entry DisplayName="Interfaces">
-        <Entry.Match>
-          <Or>
-            <Kind Is="Interface" />
-          </Or>
-        </Entry.Match>
-        <Entry.SortBy>
-          <Name />
-        </Entry.SortBy>
-      </Entry>
-    </Region>
-    <Region Name="Class">
-      <Entry DisplayName="Class">
-        <Entry.Match>
-          <Or>
-            <Kind Is="Class" />
-          </Or>
-        </Entry.Match>
-        <Entry.SortBy>
-          <Name />
-        </Entry.SortBy>
-      </Entry>
-    </Region>
-    <Region Name="Struct">
-      <Entry DisplayName="Struct">
-        <Entry.Match>
-          <Or>
-            <Kind Is="Struct" />
-          </Or>
-        </Entry.Match>
-        <Entry.SortBy>
-          <Name />
-        </Entry.SortBy>
-      </Entry>
-    </Region>
+    <Entry DisplayName="delegates">
+      <Entry.Match>
+        <Or>
+          <Kind Is="Delegate" />
+        </Or>
+      </Entry.Match>
+      <Entry.SortBy>
+        <Name />
+      </Entry.SortBy>
+    </Entry>
+    <Entry DisplayName="Enum">
+      <Entry.Match>
+        <Or>
+          <Kind Is="Enum" />
+        </Or>
+      </Entry.Match>
+      <Entry.SortBy>
+        <Name />
+      </Entry.SortBy>
+    </Entry>
+    <Entry DisplayName="Interfaces">
+      <Entry.Match>
+        <Or>
+          <Kind Is="Interface" />
+        </Or>
+      </Entry.Match>
+      <Entry.SortBy>
+        <Name />
+      </Entry.SortBy>
+    </Entry>
+    <Entry DisplayName="Class">
+      <Entry.Match>
+        <Or>
+          <Kind Is="Class" />
+        </Or>
+      </Entry.Match>
+      <Entry.SortBy>
+        <Name />
+      </Entry.SortBy>
+    </Entry>
+    <Entry DisplayName="Struct">
+      <Entry.Match>
+        <Or>
+          <Kind Is="Struct" />
+        </Or>
+      </Entry.Match>
+      <Entry.SortBy>
+        <Name />
+      </Entry.SortBy>
+    </Entry>
   </FilePattern>
-  <TypePattern DisplayName="Classes pattern">
+  <TypePattern DisplayName="Classes pattern" RemoveRegions="AllExceptGenerated">
     <TypePattern.Match>
       <Or>
         <Kind Is="Class" />
       </Or>
     </TypePattern.Match>
-    <Region Name="Constants">
-      <Entry DisplayName="Constants">
-        <Entry.Match>
-          <Or>
-            <Kind Is="Constant" />
-          </Or>
-        </Entry.Match>
-        <Entry.SortBy>
-          <Kind Is="Member" />
-          <Name />
-        </Entry.SortBy>
-      </Entry>
-      <Entry DisplayName="Readonly fields">
-        <Entry.Match>
-          <And>
-            <Kind Is="Field" />
+    <Entry DisplayName="Constants">
+      <Entry.Match>
+        <Or>
+          <Kind Is="Constant" />
+        </Or>
+      </Entry.Match>
+      <Entry.SortBy>
+        <Kind Is="Member" />
+        <Name />
+      </Entry.SortBy>
+    </Entry>
+    <Entry DisplayName="Readonly fields">
+      <Entry.Match>
+        <And>
+          <Kind Is="Field" />
+          <Readonly />
+        </And>
+      </Entry.Match>
+      <Entry.SortBy>
+        <Name />
+      </Entry.SortBy>
+    </Entry>
+    <Entry DisplayName="Type check">
+      <Entry.Match>
+        <Kind Is="Type" />
+      </Entry.Match>
+    </Entry>
+    <Entry DisplayName="Non-readonly fields">
+      <Entry.Match>
+        <And>
+          <Kind Is="Field" />
+          <Not>
             <Readonly />
-          </And>
-        </Entry.Match>
-        <Entry.SortBy>
-          <Name />
-        </Entry.SortBy>
-      </Entry>
-    </Region>
-    <Region Name="Tests">
-      <Entry DisplayName="TestMethodAttribute check">
-        <Entry.Match>
-          <Or>
-            <HasAttribute Name="TestMethod" />
-            <HasAttribute Name="Fact" />
-            <HasAttribute Name="Theory" />
-          </Or>
-        </Entry.Match>
-      </Entry>
-    </Region>
-    <Region Name="Nested types">
-      <Entry DisplayName="Type check">
-        <Entry.Match>
-          <Kind Is="Type" />
-        </Entry.Match>
-      </Entry>
-    </Region>
-    <Region Name="Fields">
-      <Entry DisplayName="Non-readonly fields">
-        <Entry.Match>
-          <And>
-            <Kind Is="Field" />
-            <Not>
-              <Readonly />
-            </Not>
-          </And>
-        </Entry.Match>
-        <Entry.SortBy>
-          <Name />
-        </Entry.SortBy>
-      </Entry>
-    </Region>
-    <Region Name="Properties">
-      <Entry DisplayName="Properties, Indexers">
-        <Entry.Match>
-          <Or>
-            <Kind Is="Property" />
-            <Kind Is="Indexer" />
-            <Kind Is="Autoproperty" />
-          </Or>
-        </Entry.Match>
-        <Entry.SortBy>
-          <Name />
-        </Entry.SortBy>
-      </Entry>
-    </Region>
-    <Region Name="Events and Delegates">
-      <Entry DisplayName="delegate">
-        <Entry.Match>
-          <And>
-            <Kind Is="Delegate" />
-          </And>
-        </Entry.Match>
-        <Entry.SortBy>
-          <Name />
-        </Entry.SortBy>
-      </Entry>
-      <Entry DisplayName="events">
-        <Entry.Match>
-          <And>
-            <Kind Is="Event" />
-          </And>
-        </Entry.Match>
-        <Entry.SortBy>
-          <Name />
-        </Entry.SortBy>
-      </Entry>
-    </Region>
-    <Region Name="Constructors">
-      <Entry DisplayName="Constructors">
-        <Entry.Match>
-          <Kind Is="Constructor" />
-        </Entry.Match>
-        <Entry.SortBy>
-          <Static />
-          <Name />
-        </Entry.SortBy>
-      </Entry>
-    </Region>
-    <Region Name="Destructors and Dispose Methods">
-      <Entry DisplayName="Destructor or dispose methods">
-        <Entry.Match>
-          <Or>
-            <Kind Is="Destructor" />
-            <Name Is="^Dispose$" />
-          </Or>
-        </Entry.Match>
-        <Entry.SortBy>
-          <Name />
-        </Entry.SortBy>
-      </Entry>
-    </Region>
-    <Region Name="Event Handlers">
-      <Entry DisplayName="Event handlers">
-        <Entry.Match>
-          <And>
-            <Kind Is="Method" />
-            <HandlesEvent />
-          </And>
-        </Entry.Match>
-        <Entry.SortBy>
-          <Name />
-        </Entry.SortBy>
-      </Entry>
-    </Region>
-    <Region Name="Public Methods">
-      <Entry DisplayName="Public methods">
-        <Entry.Match>
-          <And>
-            <Kind Is="Method" />
-            <Access Is="Public" />
-          </And>
-        </Entry.Match>
-        <Entry.SortBy>
-          <Name />
-        </Entry.SortBy>
-      </Entry>
-    </Region>
-    <Region Name="Internal Methods">
-      <Entry DisplayName="Internal methods">
-        <Entry.Match>
-          <And>
-            <Kind Is="Method" />
-            <Access Is="Internal" />
-          </And>
-        </Entry.Match>
-        <Entry.SortBy>
-          <Name />
-        </Entry.SortBy>
-      </Entry>
-    </Region>
-    <Region Name="Protected Methods">
-      <Entry DisplayName="Protected methods">
-        <Entry.Match>
-          <And>
-            <Kind Is="Method" />
-            <Access Is="Protected" />
-          </And>
-        </Entry.Match>
-        <Entry.SortBy>
-          <Name />
-        </Entry.SortBy>
-      </Entry>
-    </Region>
-    <Region Name="Private Methods">
-      <Entry DisplayName="Private methods">
-        <Entry.Match>
-          <And>
-            <Kind Is="Method" />
-            <Access Is="Private" />
-          </And>
-        </Entry.Match>
-        <Entry.SortBy>
-          <Name />
-        </Entry.SortBy>
-      </Entry>
-    </Region>
+          </Not>
+        </And>
+      </Entry.Match>
+      <Entry.SortBy>
+        <Name />
+      </Entry.SortBy>
+    </Entry>
+    <Entry DisplayName="Properties, Indexers">
+      <Entry.Match>
+        <Or>
+          <Kind Is="Property" />
+          <Kind Is="Indexer" />
+          <Kind Is="Autoproperty" />
+        </Or>
+      </Entry.Match>
+      <Entry.SortBy>
+        <Name />
+      </Entry.SortBy>
+    </Entry>
+    <Entry DisplayName="delegate">
+      <Entry.Match>
+        <And>
+          <Kind Is="Delegate" />
+        </And>
+      </Entry.Match>
+      <Entry.SortBy>
+        <Name />
+      </Entry.SortBy>
+    </Entry>
+    <Entry DisplayName="events">
+      <Entry.Match>
+        <And>
+          <Kind Is="Event" />
+        </And>
+      </Entry.Match>
+      <Entry.SortBy>
+        <Name />
+      </Entry.SortBy>
+    </Entry>
+    <Entry DisplayName="TestMethodAttribute check">
+      <Entry.Match>
+        <Or>
+          <HasAttribute Name="TestMethod" />
+          <HasAttribute Name="Fact" />
+          <HasAttribute Name="Theory" />
+        </Or>
+      </Entry.Match>
+    </Entry>
+    <Entry DisplayName="Constructors">
+      <Entry.Match>
+        <Kind Is="Constructor" />
+      </Entry.Match>
+      <Entry.SortBy>
+        <Static />
+        <Name />
+      </Entry.SortBy>
+    </Entry>
+    <Entry DisplayName="Destructor or dispose methods">
+      <Entry.Match>
+        <Or>
+          <Kind Is="Destructor" />
+          <Name Is="^Dispose$" />
+        </Or>
+      </Entry.Match>
+      <Entry.SortBy>
+        <Name />
+      </Entry.SortBy>
+    </Entry>
+    <Entry DisplayName="Event handlers">
+      <Entry.Match>
+        <And>
+          <Kind Is="Method" />
+          <HandlesEvent />
+        </And>
+      </Entry.Match>
+      <Entry.SortBy>
+        <Name />
+      </Entry.SortBy>
+    </Entry>
+    <Entry DisplayName="Public methods">
+      <Entry.Match>
+        <And>
+          <Kind Is="Method" />
+          <Access Is="Public" />
+        </And>
+      </Entry.Match>
+      <Entry.SortBy>
+        <Name />
+      </Entry.SortBy>
+    </Entry>
+    <Entry DisplayName="Internal methods">
+      <Entry.Match>
+        <And>
+          <Kind Is="Method" />
+          <Access Is="Internal" />
+        </And>
+      </Entry.Match>
+      <Entry.SortBy>
+        <Name />
+      </Entry.SortBy>
+    </Entry>
+    <Entry DisplayName="Protected methods">
+      <Entry.Match>
+        <And>
+          <Kind Is="Method" />
+          <Access Is="Protected" />
+        </And>
+      </Entry.Match>
+      <Entry.SortBy>
+        <Name />
+      </Entry.SortBy>
+    </Entry>
+    <Entry DisplayName="Private methods">
+      <Entry.Match>
+        <And>
+          <Kind Is="Method" />
+          <Access Is="Private" />
+        </And>
+      </Entry.Match>
+      <Entry.SortBy>
+        <Name />
+      </Entry.SortBy>
+    </Entry>
   </TypePattern>
-  <TypePattern DisplayName="Interfaces pattern">
+  <TypePattern DisplayName="Interfaces pattern" RemoveRegions="AllExceptGenerated">
     <TypePattern.Match>
       <Or>
         <Kind Is="Interface" />
       </Or>
     </TypePattern.Match>
-    <Region Name="Properties">
-      <Entry DisplayName="Properties, Indexers">
-        <Entry.Match>
-          <Or>
-            <Kind Is="Property" />
-            <Kind Is="Indexer" />
-            <Kind Is="Autoproperty" />
-          </Or>
-        </Entry.Match>
-        <Entry.SortBy>
-          <Name />
-        </Entry.SortBy>
-      </Entry>
-    </Region>
-    <Region Name="Events">
-      <Entry DisplayName="events">
-        <Entry.Match>
-          <And>
-            <Kind Is="Event" />
-          </And>
-        </Entry.Match>
-        <Entry.SortBy>
-          <Name />
-        </Entry.SortBy>
-      </Entry>
-    </Region>
-    <Region Name="Methods">
-      <Entry DisplayName="methods">
-        <Entry.Match>
-          <And>
-            <Kind Is="Method" />
-          </And>
-        </Entry.Match>
-        <Entry.SortBy>
-          <Name />
-        </Entry.SortBy>
-      </Entry>
-    </Region>
+    <Entry DisplayName="Properties, Indexers">
+      <Entry.Match>
+        <Or>
+          <Kind Is="Property" />
+          <Kind Is="Indexer" />
+          <Kind Is="Autoproperty" />
+        </Or>
+      </Entry.Match>
+      <Entry.SortBy>
+        <Name />
+      </Entry.SortBy>
+    </Entry>
+    <Entry DisplayName="events">
+      <Entry.Match>
+        <And>
+          <Kind Is="Event" />
+        </And>
+      </Entry.Match>
+      <Entry.SortBy>
+        <Name />
+      </Entry.SortBy>
+    </Entry>
+    <Entry DisplayName="methods">
+      <Entry.Match>
+        <And>
+          <Kind Is="Method" />
+        </And>
+      </Entry.Match>
+      <Entry.SortBy>
+        <Name />
+      </Entry.SortBy>
+    </Entry>
   </TypePattern>
-  <TypePattern DisplayName="Structs pattern">
+  <TypePattern DisplayName="Structs pattern" RemoveRegions="AllExceptGenerated">
     <TypePattern.Match>
       <Or>
         <Kind Is="Struct" />
       </Or>
     </TypePattern.Match>
-    <Region Name="Constants">
-      <Entry DisplayName="Constants">
-        <Entry.Match>
-          <Or>
-            <Kind Is="Constant" />
-          </Or>
-        </Entry.Match>
-        <Entry.SortBy>
-          <Kind Is="Member" />
-          <Name />
-        </Entry.SortBy>
-      </Entry>
-      <Entry DisplayName="Readonly fields">
-        <Entry.Match>
-          <And>
-            <Kind Is="Field" />
+    <Entry DisplayName="Constants">
+      <Entry.Match>
+        <Or>
+          <Kind Is="Constant" />
+        </Or>
+      </Entry.Match>
+      <Entry.SortBy>
+        <Kind Is="Member" />
+        <Name />
+      </Entry.SortBy>
+    </Entry>
+    <Entry DisplayName="Readonly fields">
+      <Entry.Match>
+        <And>
+          <Kind Is="Field" />
+          <Readonly />
+        </And>
+      </Entry.Match>
+      <Entry.SortBy>
+        <Name />
+      </Entry.SortBy>
+    </Entry>
+    <Entry DisplayName="Non-readonly fields">
+      <Entry.Match>
+        <And>
+          <Kind Is="Field" />
+          <Not>
             <Readonly />
-          </And>
-        </Entry.Match>
-        <Entry.SortBy>
-          <Name />
-        </Entry.SortBy>
-      </Entry>
-    </Region>
-    <Region Name="Nested types">
-      <Entry DisplayName="Type check">
-        <Entry.Match>
-          <Kind Is="Type" />
-        </Entry.Match>
-      </Entry>
-    </Region>
-    <Region Name="Fields">
-      <Entry DisplayName="Non-readonly fields">
-        <Entry.Match>
-          <And>
-            <Kind Is="Field" />
-            <Not>
-              <Readonly />
-            </Not>
-          </And>
-        </Entry.Match>
-        <Entry.SortBy>
-          <Name />
-        </Entry.SortBy>
-      </Entry>
-    </Region>
-    <Region Name="Properties">
-      <Entry DisplayName="Properties, Indexers">
-        <Entry.Match>
-          <Or>
-            <Kind Is="Property" />
-            <Kind Is="Indexer" />
-            <Kind Is="Autoproperty" />
-          </Or>
-        </Entry.Match>
-        <Entry.SortBy>
-          <Name />
-        </Entry.SortBy>
-      </Entry>
-    </Region>
-    <Region Name="Events and Delegates">
-      <Entry DisplayName="delegate">
-        <Entry.Match>
-          <And>
-            <Kind Is="Delegate" />
-          </And>
-        </Entry.Match>
-        <Entry.SortBy>
-          <Name />
-        </Entry.SortBy>
-      </Entry>
-      <Entry DisplayName="events">
-        <Entry.Match>
-          <And>
-            <Kind Is="Event" />
-          </And>
-        </Entry.Match>
-        <Entry.SortBy>
-          <Name />
-        </Entry.SortBy>
-      </Entry>
-    </Region>
-    <Region Name="Constructors">
-      <Entry DisplayName="Constructors">
-        <Entry.Match>
-          <Kind Is="Constructor" />
-        </Entry.Match>
-        <Entry.SortBy>
-          <Static />
-          <Name />
-        </Entry.SortBy>
-      </Entry>
-    </Region>
-    <Region Name="Destructors and Dispose Methods">
-      <Entry DisplayName="Destructor or dispose methods">
-        <Entry.Match>
-          <Or>
-            <Kind Is="Destructor" />
-            <Name Is="^Dispose$" />
-          </Or>
-        </Entry.Match>
-        <Entry.SortBy>
-          <Name />
-        </Entry.SortBy>
-      </Entry>
-    </Region>
-    <Region Name="Event Handlers">
-      <Entry DisplayName="Event handlers">
-        <Entry.Match>
-          <And>
-            <Kind Is="Method" />
-            <HandlesEvent />
-          </And>
-        </Entry.Match>
-        <Entry.SortBy>
-          <Name />
-        </Entry.SortBy>
-      </Entry>
-    </Region>
-    <Region Name="Public Methods">
-      <Entry DisplayName="Public methods">
-        <Entry.Match>
-          <And>
-            <Kind Is="Method" />
-            <Access Is="Public" />
-          </And>
-        </Entry.Match>
-        <Entry.SortBy>
-          <Name />
-        </Entry.SortBy>
-      </Entry>
-    </Region>
-    <Region Name="Internal Methods">
-      <Entry DisplayName="Internal methods">
-        <Entry.Match>
-          <And>
-            <Kind Is="Method" />
-            <Access Is="Internal" />
-          </And>
-        </Entry.Match>
-        <Entry.SortBy>
-          <Name />
-        </Entry.SortBy>
-      </Entry>
-    </Region>
-    <Region Name="Protected Methods">
-      <Entry DisplayName="Protected methods">
-        <Entry.Match>
-          <And>
-            <Kind Is="Method" />
-            <Access Is="Protected" />
-          </And>
-        </Entry.Match>
-        <Entry.SortBy>
-          <Name />
-        </Entry.SortBy>
-      </Entry>
-    </Region>
-    <Region Name="Private Methods">
-      <Entry DisplayName="Private methods">
-        <Entry.Match>
-          <And>
-            <Kind Is="Method" />
-            <Access Is="Private" />
-          </And>
-        </Entry.Match>
-        <Entry.SortBy>
-          <Name />
-        </Entry.SortBy>
-      </Entry>
-    </Region>
+          </Not>
+        </And>
+      </Entry.Match>
+      <Entry.SortBy>
+        <Name />
+      </Entry.SortBy>
+    </Entry>
+    <Entry DisplayName="Type check">
+      <Entry.Match>
+        <Kind Is="Type" />
+      </Entry.Match>
+    </Entry>
+    <Entry DisplayName="delegate">
+      <Entry.Match>
+        <And>
+          <Kind Is="Delegate" />
+        </And>
+      </Entry.Match>
+      <Entry.SortBy>
+        <Name />
+      </Entry.SortBy>
+    </Entry>
+    <Entry DisplayName="events">
+      <Entry.Match>
+        <And>
+          <Kind Is="Event" />
+        </And>
+      </Entry.Match>
+      <Entry.SortBy>
+        <Name />
+      </Entry.SortBy>
+    </Entry>
+    <Entry DisplayName="Properties, Indexers">
+      <Entry.Match>
+        <Or>
+          <Kind Is="Property" />
+          <Kind Is="Indexer" />
+          <Kind Is="Autoproperty" />
+        </Or>
+      </Entry.Match>
+      <Entry.SortBy>
+        <Name />
+      </Entry.SortBy>
+    </Entry>
+    <Entry DisplayName="Constructors">
+      <Entry.Match>
+        <Kind Is="Constructor" />
+      </Entry.Match>
+      <Entry.SortBy>
+        <Static />
+        <Name />
+      </Entry.SortBy>
+    </Entry>
+    <Entry DisplayName="Destructor or dispose methods">
+      <Entry.Match>
+        <Or>
+          <Kind Is="Destructor" />
+          <Name Is="^Dispose$" />
+        </Or>
+      </Entry.Match>
+      <Entry.SortBy>
+        <Name />
+      </Entry.SortBy>
+    </Entry>
+    <Entry DisplayName="Event handlers">
+      <Entry.Match>
+        <And>
+          <Kind Is="Method" />
+          <HandlesEvent />
+        </And>
+      </Entry.Match>
+      <Entry.SortBy>
+        <Name />
+      </Entry.SortBy>
+    </Entry>
+    <Entry DisplayName="Public methods">
+      <Entry.Match>
+        <And>
+          <Kind Is="Method" />
+          <Access Is="Public" />
+        </And>
+      </Entry.Match>
+      <Entry.SortBy>
+        <Name />
+      </Entry.SortBy>
+    </Entry>
+    <Entry DisplayName="Internal methods">
+      <Entry.Match>
+        <And>
+          <Kind Is="Method" />
+          <Access Is="Internal" />
+        </And>
+      </Entry.Match>
+      <Entry.SortBy>
+        <Name />
+      </Entry.SortBy>
+    </Entry>
+    <Entry DisplayName="Protected methods">
+      <Entry.Match>
+        <And>
+          <Kind Is="Method" />
+          <Access Is="Protected" />
+        </And>
+      </Entry.Match>
+      <Entry.SortBy>
+        <Name />
+      </Entry.SortBy>
+    </Entry>
+    <Entry DisplayName="Private methods">
+      <Entry.Match>
+        <And>
+          <Kind Is="Method" />
+          <Access Is="Private" />
+        </And>
+      </Entry.Match>
+      <Entry.SortBy>
+        <Name />
+      </Entry.SortBy>
+    </Entry>
   </TypePattern>
 </Patterns>
